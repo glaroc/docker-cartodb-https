@@ -1,6 +1,6 @@
 # Create foreign data wrapper to another postgresql database
 #
-ORGANIZATION_DB=`echo "SELECT database_name FROM users WHERE username='admin4example'" | psql -U postgres -t carto_db_production
+ORGANIZATION_DB=`echo "SELECT database_name FROM users WHERE username='admin4example'" | psql -U postgres -t carto_db_production`
 
 echo "CREATE EXTENSION postgres_fdw;" | psql -U postgres $ORGANIZATION_DB
 echo "CREATE SCHEMA gps;" | psql -U postgres $ORGANIZATION_DB
